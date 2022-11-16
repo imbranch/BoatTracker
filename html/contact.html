@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Home Page</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../css/css.css">
+    </head>
+
+    <body>
+        <div id="application">
+            <div class="topnav">
+                    <a href="home.html">Home</a>
+                    <a href="table.html">Main Table</a>
+                    <a href="visual.html">Visualization</a>
+                    <a href="about.html">About us</a>
+                    <a class="active" href="contact.html">Contact us</a>
+                    <a href="support.html">Support us</a>
+                    <a href="https://github.com/jcy2000/Mo-Jo-Cubed" target="_blank">Our GitHub</a> <br>
+            </div>
+            <div class="search">
+                <input type="text" placeholder="Search..">
+                <button type="submit" onclick="window.location.href='search.html'">Submit</button>
+            </div>
+            
+
+            <!--Possible Search Options
+            Popularity
+            Alphabetical Game Search (A-J or something)
+            Number of Reviews
+            Number of Reviews Made
+            Number of Owned Games
+            Language
+            Early Access
+            Number of Comments
+            -->
+            <div class="sidenav">
+            </div>
+            
+            
+            <div class="main">
+                <div class="contact">
+                    <h2>How can we help?</h2>
+                    <form class="contact-form">
+                        <div class="contact-info">
+                            <div class="name" style="margin: 1%;">
+                                <span>First name</span> <br>
+                                <input type="text" id="fname">
+                            </div>
+
+                            <div class="name">
+                                <span>Last name</span> <br>
+                                <input type="text" id="lname">
+                            </div>
+
+                            <div class="email">
+                                <span>Email</span> <br>
+                                <input type="text" id="email">
+                            </div>
+                        </div>
+
+                        <div class="message">
+                            <span>Message</span> <br>
+                            <textarea></textarea> <br>
+                            
+                            <span>Addtional Comments</span>
+                            <textarea></textarea> <br>
+                        </div>
+
+                        <input class="submit" type="submit" value="Send Message">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

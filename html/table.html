@@ -1,0 +1,157 @@
+<html lang="en">
+
+<head>
+	<title>Home Page</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="../css/css.css">
+</head>
+
+<body>
+	<div class="topnav">
+		<a href="home.html">Home</a>
+		<a class="active" href="table.html">Main Table</a>
+		<a href="Visual.php">Visualization</a>
+		<a href="about.html">About us</a>
+		<a href="contact.html">Contact us</a>
+		<a href="support.html">Support us</a>
+		<a href="https://github.com/jcy2000/Mo-Jo-Cubed" target="_blank">Our GitHub</a> <br>
+	</div>
+	<div class="search">
+		<input type="text" placeholder="Search..">
+		<button type="submit">Submit</button>
+	</div>
+
+
+
+
+
+
+	<div class="main">
+		<div class="a">
+			These tables show what values are in the database
+		</div>
+		<hr class="divider">
+		<table id="reviews">
+			<tr>
+				<th colspan="2" class="tName">Reviews</th>
+			</tr>
+			<tr>
+				<th class="cName">Name</th>
+				<th class="cName">Definition</th>
+			</tr>
+			<tr>
+				<td>Text</td>
+				<td>The actual text of the review that the user wrote.</td>
+			</tr>
+			<tr>
+				<td>Last Played</td>
+				<td>Amount of time passed since user last played at time of review.</td>
+			</tr>
+			<tr>
+				<td>Time Played Last Two Weeks</td>
+				<td>User's amount of time played in the last two weeks at time fo review.</td>
+			</tr>
+			<tr>
+				<td>Total Play Time</td>
+				<td>User's amount of time played in total.</td>
+			</tr>
+			<tr>
+				<td>Comment Count</td>
+				<td>Amount of comments on a single review.</td>
+			</tr>
+			<tr>
+				<td>Recommended</td>
+				<td>Whether or not the review is rated as recommended.</td>
+			</tr>
+			<tr>
+				<!-- create stored procedure in mysql to convert timestamp to date -->
+				<td>Date Created</td>
+				<td>Date the review was created, returned in local timezone as YYYY-MM-DD HH:MM:SS.</td>
+			</tr>
+			<tr>
+				<td>Date Updated</td>
+				<td>Date the review was last updated. Returns date created if never updated.</td>
+			</tr>
+			<tr>
+				<td>Language</td>
+				<td>What language the review was written in</td>
+			</tr>
+			<tr>
+				<td>Written During Early Access</td>
+				<td>Whether or not the review was written during the game's early access time.</td>
+			</tr>
+			<tr>
+				<td>Play Time at Review</td>
+				<td>User's total amount of time played at time of review.</td>
+			</tr>
+		</table>
+		<hr class="divider">
+		<table id="games">
+			<tr>
+				<th colspan="2" class="tName">Games</th>
+			</tr>
+			<tr>
+				<th class="cName">Name</th>
+				<th class="cName">Definition</th>
+			</tr>
+			<tr>
+				<td>Game Name</td>
+				<td>Official name of the game.</td>
+			</tr>
+		</table>
+		<hr class="divider">
+		<table id="owns">
+			<tr>
+				<th colspan="2" class="tName">Owns</th>
+			</tr>
+			<tr>
+				<th class="cName">Name</th>
+				<th class="cName">Definition</th>
+			</tr>
+			<tr>
+				<td>Game Attainment</td>
+				<td>How the user attained the game.</td>
+			</tr>
+		</table>
+		<hr class="divider">
+		<table id="users">
+			<tr>
+				<th colspan="2" class="tName">Users</th>
+			</tr>
+			<tr>
+				<th class="cName">Name</th>
+				<th class="cName">Definition</th>
+			</tr>
+			<tr>
+				<td>Reviews Made</td>
+				<td>Amount of reviews the user has made.</td>
+			</tr>
+			<tr>
+				<td>Games Owned</td>
+				<td>Amount of games owned by the user.</td>
+			</tr>
+		</table>
+		<hr class="divider">
+		<table id="votes">
+			<tr>
+				<th colspan="2" class="tName">Votes</th>
+			</tr>
+			<tr>
+				<th class="cName">Name</th>
+				<th class="cName">Definition</th>
+			</tr>
+			<tr>
+				<td>Amount</td>
+				<td>Total amount of votes that a review has received.</td>
+			</tr>
+			<tr>
+				<td>Weighted Score</td>
+				<td>A zero to one score based on votes for helpfulness. Higher score is better.</td>
+			</tr>
+		</table>
+		<hr class="divider">
+	</div>
+	</div>
+</body>
+
+</html>

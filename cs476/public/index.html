@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/style.css" type="text/css">
+    <link rel="stylesheet" href="styles/searching.css" type="text/css">
+    <link rel="stylesheet" href="styles/account.css" type="text/css">
+    <link rel="stylesheet" href="styles/cart.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>BoatTracker</title>
+</head>
+
+<body>
+    <div id="container">
+        <nav>
+            <!-- <div class="navElement unselectable" data-page="cart">Cart/Returns</div>
+            <div class="navElement unselectable" data-page="account" id="accountNavButton">Sign In/Sign Up</div> -->
+            <div class="navElement unselectable navActive" data-page="discover">Search The Database</div>
+            <div class="navTitle unselectable">Sailing Data Tracker</div>
+        </nav>
+        <main>
+            <section class="sectionActive" id="discover">
+                <div id="searchArea">
+                    <!-- <input class="unselectable" type="text" id="searchInput" name="search"
+                        placeholder="Search title, author, or ISBN13...">
+                    <button id="searchButton"><i class="fa fa-search"></i></button> -->
+                    <!--Sail Number Filter-->
+                    <label for="sortInput">Sail Number</label>
+                    <select class="searchDropdown" id="sortInput" name="sortInput">
+                        <option value="popular">1</option>
+                        <option value="best">2</option>
+                        <option value="newest">3</option>
+                        <option value="oldest">4</option>
+                        <option value="shortest">5</option>
+                        <option value="longest">6</option>
+                        <option value="seven">7</option>
+                        <!--my additions start-->
+                        <option value="eight">8</option>
+                        <option value="nine">9</option>
+                        <option value="ten">10</option>
+                    </select>
+                    <!--Boat Type Filter-->
+                    <label for="subjectInput">Boat Type</label>
+                    <select class="searchDropdown" id="subjectInput" name="subjectInput">
+                        <option value="all">All</option>
+                        <option value="art">Class A</option>
+                        <option value="biography">Class B</option>
+                        <option value="children's">Class C</option>
+                        <option value="christian">Class D</option>
+                        <option value="classics">Class E</option>
+                        <option value="comics">Class F</option>
+                        <option value="cookbooks">Class G</option>
+                        <option value="ebooks">Class H</option>
+
+                    </select>
+                </div>
+                <div id="contentWrapper">
+                    <div id="filterArea">
+                        <label for="subjectInput">Boat Type</label>
+                        <select class="searchDropdown" id="subjectInput" name="subjectInput">
+                            <option value="all">All</option>
+                            <option value="art">Class A</option>
+                            <option value="biography">Class B</option>
+                            <option value="children's">Class C</option>
+                            <option value="christian">Class D</option>
+                            <option value="classics">Class E</option>
+                            <option value="comics">Class F</option>
+                            <option value="cookbooks">Class G</option>
+                            <option value="ebooks">Class H</option>
+                        </select>
+                        <hr>
+                        <label for="sortInput">Sail Number</label>
+                        <select class="searchDropdown" id="sortInput" name="sortInput">
+                            <option value="popular">1</option>
+                            <option value="best">2</option>
+                            <option value="newest">3</option>
+                            <option value="oldest">4</option>
+                            <option value="shortest">5</option>
+                            <option value="longest">6</option>
+                            <option value="seven">7</option>
+                            <!--my additions start-->
+                            <option value="eight">8</option>
+                            <option value="nine">9</option>
+                            <option value="ten">10</option>
+                        </select>
+                        <hr>
+                        <label for="dateStart">Sailing Dates from</label>
+                        <input class="dateInput" type="date" id="dateStart" name="dateStart" value="1900-01-01"
+                            min="1900-01-01" max="2021-12-31">
+
+                        <label for="dateEnd">to</label>
+                        <input class="dateInput" type="date" id="dateEnd" name="dateEnd" value="2021-12-31"
+                            min="1900-01-01" max="2021-12-31">
+                       <!--  <hr>
+                        <label for="ratingInput">Minimum rating</label>
+                        <input type="range" step="0.1" min="0" max="5" value="0" name="ratingInput" id="ratingInput">
+                        <label id="ratingInputResult" style="text-align: center; color: #333;">0 <span
+                                style="font-size: 14pt;">&star;&star;&star;&star;&star;</span></label>-->
+                        <hr>
+                        <div>
+                            <input type="checkbox" id="availableInput" name="availableInput" value="available">
+                            <label class="unselectable" for="availableInput" style="cursor: pointer">Include
+                                Winners</label>
+                        </div>
+                        <hr>
+                        <!--  <label for="pageStart">Page length from</label>
+                        <input class="pageInput" type="number" min="1" max="10000" step="1" id="pageStart" name="pageStart" value="1">
+
+                        <label for="pageEnd">to</label>
+                        <input class="pageInput" type="number" min="1" max="10000" step="1" id="pageEnd" name="pageEnd" value="10000"> -->
+
+                        <button name="filterButton" id="filterButton">Apply</button>
+                    </div>
+                    <div id="noResult">No results to show</div>
+                    <div id="resultArea">
+                        <iframe id="mapArea"
+                        src="/cs476/public/basic_folium_map_osm.html"
+                        frameborder="0"
+                      ></iframe>
+                    </div>
+                </div>
+
+                <!-- <div class="modal" id="bookModal">
+                    <div id="bookModalContent">
+                        <div class="unselectable" id="bookCloseButton">X</div>
+                        <div id="bookModalTitle">Lord of the Rings&nbsp;<span id="bookModalLanguageCode">eng</span>
+                        </div>
+                        <div id="bookModalISBN13">9780618517657</div>
+                        <div class="bookModalText" id="bookModalPublisherInformation">Houghton Mifflin Harcourt,
+                            10/21/2004</div>
+                        <div class="bookModalText" id="bookModalAuthors">J.R.R. Tolkien</div>
+                        <div class="bookModalText" id="bookModalSubject">Fantasy</div>
+                        <div id="bookModalSplit">
+                            <div class="bookModalText" id="bookModalPages">1184 pages</div>
+                            <div style="text-align: right;">
+                                <div class="bookModalText" id="bookModalRating">&starf;&starf;&starf;&starf;&star;</div>
+                                <div id="bookModalRatingCount">4.5 from 1710 reviews</div>
+                            </div>
+                        </div>
+                        <div id="bookModalEnd">
+                            <div id="bookModalStock">6 in stock</div>
+                            <button class="unselectable" id="bookModalCartButton" data-can-click="false">Add to
+                                cart</button>
+                        </div>
+                    </div>
+                </div> -->
+                
+        </main>
+    </div>
+</body>
+<script type="module" src="index.js"></script>
+
+</html>

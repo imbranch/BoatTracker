@@ -1,0 +1,101 @@
+#cartContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 80px;
+}
+
+#cartTitle {
+  font-size: 24pt;
+}
+
+#cartInputs {
+  width: 60%;
+  min-width: 800px;
+  margin: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  font-family: Georgia;
+  font-size: 14pt;
+}
+
+#cartRemoveButton {
+  color: #b20000;
+  cursor: pointer;
+}
+
+#cartRemoveButton:hover {
+  text-decoration: underline;
+}
+
+.cartPageButton {
+  border: none;
+  background-color: #f50;
+  color: white;
+  padding: 20px;
+  font-size: 16pt;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+.cartPageButton:hover {
+  background-color: #e64d00;
+}
+
+.cartPageButton:focus {
+  outline: none;
+}
+
+.cartPageButton:active {
+  background-color: #cc4400;
+}
+
+.cartPageResults {
+  width: 80%;
+  min-width: 800px;
+  float: left;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 3px 3px 10px #ccc;
+}
+
+.cartResult {
+  height: 100px;
+  padding: 10px 40px;
+  float: left;
+  background-color: white;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+#cartItemCheckbox {
+  width: 30px;
+  height: 30px;
+  margin: auto 30px;
+  cursor: pointer;
+}
+
+#cartResultRight {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  flex-grow: 10;
+}
+
+#cartNoResult {
+  color: #333;
+  font-size: 16pt;
+  font-family: Georgia;
+  display: none;
+}
+
+#checkedOutNoResult {
+  color: #333;
+  font-size: 16pt;
+  font-family: Georgia;
+  display: none;
+}

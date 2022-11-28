@@ -4,10 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="styles/style.css" type="text/css">
     <link rel="stylesheet" href="styles/searching.css" type="text/css">
-    <link rel="stylesheet" href="styles/account.css" type="text/css">
-    <link rel="stylesheet" href="styles/cart.css" type="text/css">
+    <link rel="stylesheet" href="styles/style.css" type="text/css">
+    <!-- <link rel="stylesheet" href="styles/account.css" type="text/css"> -->
+    <!-- <link rel="stylesheet" href="styles/cart.css" type="text/css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>BoatTracker</title>
 </head>
@@ -22,11 +22,10 @@
         </nav>
         <main>
             <section class="sectionActive" id="discover">
-                <div id="searchArea">
-                    <!-- <input class="unselectable" type="text" id="searchInput" name="search"
+            <!--<div id="searchArea">
+                    <input class="unselectable" type="text" id="searchInput" name="search"
                         placeholder="Search title, author, or ISBN13...">
-                    <button id="searchButton"><i class="fa fa-search"></i></button> -->
-                    <!--Sail Number Filter-->
+                    <button id="searchButton"><i class="fa fa-search"></i></button>
                     <label for="sortInput">Sail Number</label>
                     <select class="searchDropdown" id="sortInput" name="sortInput">
                         <option value="popular">1</option>
@@ -36,12 +35,12 @@
                         <option value="shortest">5</option>
                         <option value="longest">6</option>
                         <option value="seven">7</option>
-                        <!--my additions start-->
+
                         <option value="eight">8</option>
                         <option value="nine">9</option>
                         <option value="ten">10</option>
                     </select>
-                    <!--Boat Type Filter-->
+                    
                     <label for="subjectInput">Boat Type</label>
                     <select class="searchDropdown" id="subjectInput" name="subjectInput">
                         <option value="all">All</option>
@@ -55,10 +54,10 @@
                         <option value="ebooks">Class H</option>
 
                     </select>
-                </div>
+                </div> -->
                 <div id="contentWrapper">
                     <div id="filterArea">
-                        <label for="subjectInput">Boat Type</label>
+                        <label for="boatInput">Boat Type</label><!-- <label for="subjectInput">Boat Type</label> -->
                         <select class="searchDropdown" id="subjectInput" name="subjectInput">
                             <option value="all">All</option>
                             <option value="art">Class A</option>
@@ -71,7 +70,7 @@
                             <option value="ebooks">Class H</option>
                         </select>
                         <hr>
-                        <label for="sortInput">Sail Number</label>
+                        <label for="sailInput">Sail Number</label> <!-- <label for="sortInput">Sail Number</label> -->
                         <select class="searchDropdown" id="sortInput" name="sortInput">
                             <option value="popular">1</option>
                             <option value="best">2</option>
@@ -93,7 +92,7 @@
                         <label for="dateEnd">to</label>
                         <input class="dateInput" type="date" id="dateEnd" name="dateEnd" value="2021-12-31"
                             min="1900-01-01" max="2021-12-31">
-                       <!--  <hr>
+                       <!--
                         <label for="ratingInput">Minimum rating</label>
                         <input type="range" step="0.1" min="0" max="5" value="0" name="ratingInput" id="ratingInput">
                         <label id="ratingInputResult" style="text-align: center; color: #333;">0 <span
@@ -114,9 +113,11 @@
                         <button name="filterButton" id="filterButton">Apply</button>
                     </div>
                     <div id="noResult">No results to show</div>
+
+                    <!-- map display area -->
                     <div id="resultArea">
                         <iframe id="mapArea"
-                        src="/cs476/public/basic_folium_map_osm.html"
+                        src="/cs476/public/basic_folium_map_osm.html" 
                         frameborder="0"
                       ></iframe>
                     </div>

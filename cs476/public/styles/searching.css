@@ -1,13 +1,13 @@
 /*Search Page*/
 
 /*Search*/
-#searchArea {
+/* #searchArea {
   display: flex;
   justify-content: center;
   width: 80%;
   min-width: 1000px;
   margin-left: 10%;
-}
+} */
 
 /* #searchInput {
   padding: 10px 10px;
@@ -20,10 +20,10 @@
   box-shadow: 3px 3px 10px #ccc;
 } */
 
-#searchInput:focus {
+/* #searchInput:focus {
   outline: none;
   border-left: 20px solid #333;
-}
+} */
 
 /* #searchButton {
   height: 50px;
@@ -50,7 +50,7 @@
   background-color: #aaa;
 } */
 
-.searchDropdown {
+/* .searchDropdown {
   padding: 10px 10px;
   height: 50px;
   border: none;
@@ -63,7 +63,7 @@
 .searchDropdown:focus {
   outline: none;
   border-left: 10px solid #333;
-}
+} */
 
 #sortInput {
   width: 140px;
@@ -235,7 +235,7 @@ input[type="range"]:focus::-webkit-slider-runnable-track {
   flex-direction: row;
 }
 
-/* .bookResult {
+.bookResult {
   height: 100px;
   padding: 10px 40px;
   float: left;

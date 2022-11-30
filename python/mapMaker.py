@@ -1,8 +1,12 @@
 import csv
 import folium
+import datetime
 results = []
 
-    
+# map maker needs to be told the type of boat class it is making today
+# we now know the date
+today = datetime.date
+
 
 with open("/Users/bean/Desktop/gpsCSVtest.csv",newline='') as csvfile:
     reader = csv.reader(csvfile, delimiter=',',quotechar='|' )

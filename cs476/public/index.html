@@ -65,13 +65,26 @@
                             <option value="children's">Class C</option>
                             <option value="christian">Class D</option>
                             <option value="classics">Class E</option>
-                            <option value="comics">Class F</option>
-                            <option value="cookbooks">Class G</option>
-                            <option value="ebooks">Class H</option>
                         </select>
                         <hr>
-                        <label for="sailInput">Sail Number</label> <!-- <label for="sortInput">Sail Number</label> -->
-                        <select class="searchDropdown" id="sortInput" name="sortInput">
+                        <label for="dateStart">Sailing Date</label>
+                        <input class="dateInput" type="date" id="dateStart" name="dateStart" value="2022-06-01"
+                            min="2022-06-01" max="2022-08-31">
+
+                            <button name="filterButton" id="filterButton">Apply</button>
+                    </div>
+                    <div id="noResult">No results to show</div>
+
+                    <!-- map display area -->
+                    <div id="resultArea">
+                        <iframe id="mapArea"
+                        src="/cs476/public/Maps/A/11-01-2022.html" 
+                        frameborder="0"
+                      ></iframe>
+                    </div>
+                        <!-- <label for="sailInput">Sail Number</label> <label for="sortInput">Sail Number</label> -->
+            <!--             <select class="searchDropdown" id="sortInput" name="sortInput">
+                            <option value="ten">All</option>
                             <option value="popular">1</option>
                             <option value="best">2</option>
                             <option value="newest">3</option>
@@ -79,75 +92,33 @@
                             <option value="shortest">5</option>
                             <option value="longest">6</option>
                             <option value="seven">7</option>
-                            <!--my additions start-->
                             <option value="eight">8</option>
                             <option value="nine">9</option>
-                            <option value="ten">10</option>
                         </select>
-                        <hr>
-                        <label for="dateStart">Sailing Dates from</label>
-                        <input class="dateInput" type="date" id="dateStart" name="dateStart" value="1900-01-01"
-                            min="1900-01-01" max="2021-12-31">
+                        <hr> -->
+                        
 
-                        <label for="dateEnd">to</label>
+                        <!-- <label for="dateEnd">to</label>
                         <input class="dateInput" type="date" id="dateEnd" name="dateEnd" value="2021-12-31"
-                            min="1900-01-01" max="2021-12-31">
-                       <!--
-                        <label for="ratingInput">Minimum rating</label>
+                            min="1900-01-01" max="2021-12-31"> -->
+                       
+                        <!-- <label for="ratingInput">Minimum rating</label>
                         <input type="range" step="0.1" min="0" max="5" value="0" name="ratingInput" id="ratingInput">
                         <label id="ratingInputResult" style="text-align: center; color: #333;">0 <span
-                                style="font-size: 14pt;">&star;&star;&star;&star;&star;</span></label>-->
-                        <hr>
+                                style="font-size: 14pt;">&star;&star;&star;&star;&star;</span></label> -->
+                        <!-- <hr>
                         <div>
                             <input type="checkbox" id="availableInput" name="availableInput" value="available">
                             <label class="unselectable" for="availableInput" style="cursor: pointer">Include
                                 Winners</label>
                         </div>
-                        <hr>
+                        <hr> -->
                         <!--  <label for="pageStart">Page length from</label>
                         <input class="pageInput" type="number" min="1" max="10000" step="1" id="pageStart" name="pageStart" value="1">
 
                         <label for="pageEnd">to</label>
                         <input class="pageInput" type="number" min="1" max="10000" step="1" id="pageEnd" name="pageEnd" value="10000"> -->
-
-                        <button name="filterButton" id="filterButton">Apply</button>
-                    </div>
-                    <div id="noResult">No results to show</div>
-
-                    <!-- map display area -->
-                    <div id="resultArea">
-                        <iframe id="mapArea"
-                        src="/cs476/public/basic_folium_map_osm.html" 
-                        frameborder="0"
-                      ></iframe>
-                    </div>
-                </div>
-
-                <!-- <div class="modal" id="bookModal">
-                    <div id="bookModalContent">
-                        <div class="unselectable" id="bookCloseButton">X</div>
-                        <div id="bookModalTitle">Lord of the Rings&nbsp;<span id="bookModalLanguageCode">eng</span>
-                        </div>
-                        <div id="bookModalISBN13">9780618517657</div>
-                        <div class="bookModalText" id="bookModalPublisherInformation">Houghton Mifflin Harcourt,
-                            10/21/2004</div>
-                        <div class="bookModalText" id="bookModalAuthors">J.R.R. Tolkien</div>
-                        <div class="bookModalText" id="bookModalSubject">Fantasy</div>
-                        <div id="bookModalSplit">
-                            <div class="bookModalText" id="bookModalPages">1184 pages</div>
-                            <div style="text-align: right;">
-                                <div class="bookModalText" id="bookModalRating">&starf;&starf;&starf;&starf;&star;</div>
-                                <div id="bookModalRatingCount">4.5 from 1710 reviews</div>
-                            </div>
-                        </div>
-                        <div id="bookModalEnd">
-                            <div id="bookModalStock">6 in stock</div>
-                            <button class="unselectable" id="bookModalCartButton" data-can-click="false">Add to
-                                cart</button>
-                        </div>
-                    </div>
-                </div> -->
-                
+                </div>    
         </main>
     </div>
 </body>

@@ -3,56 +3,6 @@ import http from '/util/http.js';
 
 const localUrl = `${location.protocol}//${location.host}`;
 
-/* let user = {
-    user_id: -1
-}
- */
-/* function getStars(num) {
-    const value = Math.floor(num);
-    let stars = '';
-    for (let i = 0; i < value; i++) {
-        stars += '&starf;'
-    }
-    for (let i = value; i < 5; i++) {
-        stars += '&star;'
-    }
-    return stars;
-} */
-
-/* function loadBook(bookid) {
-    http.getData(`${localUrl}/discover/book/${bookid}`).then(response => {
-        const res = JSON.parse(response)
-        if (res.length > 0) {
-            const book = res[0];
-            document.getElementById("bookModal").setAttribute('data-book-id', book.book_id);
-            document.getElementById("bookModalTitle").innerHTML = `${book.title} <span id="bookModalLanguageCode">${book.language_code}</span>`;
-            document.getElementById("bookModalISBN13").innerHTML = book.isbn13;
-            document.getElementById("bookModalPublisherInformation").innerHTML = `Publisher: ${book.publisher}, ${book.publication_date}`;
-            document.getElementById("bookModalAuthors").innerHTML = book.authors;
-            document.getElementById("bookModalSubject").innerHTML = book.subject;
-            document.getElementById("bookModalPages").innerHTML = `${book.num_pages} pages`;
-            document.getElementById("bookModalRating").innerHTML = getStars(book.average_rating);
-            document.getElementById("bookModalRatingCount").innerHTML = `${book.average_rating} from ${book.ratings_count} reviews`;
-            document.getElementById("bookModalStock").innerHTML = `${book.item_count} in stock`;
-            if (book.item_count > 0 && user.user_id != -1) {
-                document.getElementById("bookModalCartButton").classList.add('bookModalCartButton');
-                document.getElementById("bookModalCartButton").classList.remove('bookModalCartButtonInactive');
-                document.getElementById("bookModalCartButton").setAttribute('data-can-click', 'true');
-            } else {
-                document.getElementById("bookModalCartButton").classList.remove('bookModalCartButton');
-                document.getElementById("bookModalCartButton").classList.add('bookModalCartButtonInactive');
-                document.getElementById("bookModalCartButton").setAttribute('data-can-click', 'false');
-            }
-            document.getElementById("bookModal").style.display = 'flex';
-        }
-    });
-} */
-
-/* function closeBookModal() {
-    document.getElementById("bookModal").style.display = 'none';
-    document.getElementById("bookModalCartButton").setAttribute('data-can-click', 'false');
-} */
-
 function loadSearchResults(res) {
     clearSearchResults();
     const resultArea = document.getElementById("resultArea");
@@ -118,8 +68,62 @@ function getSearchInput() {
     });
 }
 
-
 document.getElementById('filterButton').addEventListener('click', getSearchInput);
+
+
+
+/* let user = {
+    user_id: -1
+}
+ */
+/* function getStars(num) {
+    const value = Math.floor(num);
+    let stars = '';
+    for (let i = 0; i < value; i++) {
+        stars += '&starf;'
+    }
+    for (let i = value; i < 5; i++) {
+        stars += '&star;'
+    }
+    return stars;
+} */
+
+/* function loadBook(bookid) {
+    http.getData(`${localUrl}/discover/book/${bookid}`).then(response => {
+        const res = JSON.parse(response)
+        if (res.length > 0) {
+            const book = res[0];
+            document.getElementById("bookModal").setAttribute('data-book-id', book.book_id);
+            document.getElementById("bookModalTitle").innerHTML = `${book.title} <span id="bookModalLanguageCode">${book.language_code}</span>`;
+            document.getElementById("bookModalISBN13").innerHTML = book.isbn13;
+            document.getElementById("bookModalPublisherInformation").innerHTML = `Publisher: ${book.publisher}, ${book.publication_date}`;
+            document.getElementById("bookModalAuthors").innerHTML = book.authors;
+            document.getElementById("bookModalSubject").innerHTML = book.subject;
+            document.getElementById("bookModalPages").innerHTML = `${book.num_pages} pages`;
+            document.getElementById("bookModalRating").innerHTML = getStars(book.average_rating);
+            document.getElementById("bookModalRatingCount").innerHTML = `${book.average_rating} from ${book.ratings_count} reviews`;
+            document.getElementById("bookModalStock").innerHTML = `${book.item_count} in stock`;
+            if (book.item_count > 0 && user.user_id != -1) {
+                document.getElementById("bookModalCartButton").classList.add('bookModalCartButton');
+                document.getElementById("bookModalCartButton").classList.remove('bookModalCartButtonInactive');
+                document.getElementById("bookModalCartButton").setAttribute('data-can-click', 'true');
+            } else {
+                document.getElementById("bookModalCartButton").classList.remove('bookModalCartButton');
+                document.getElementById("bookModalCartButton").classList.add('bookModalCartButtonInactive');
+                document.getElementById("bookModalCartButton").setAttribute('data-can-click', 'false');
+            }
+            document.getElementById("bookModal").style.display = 'flex';
+        }
+    });
+} */
+
+/* function closeBookModal() {
+    document.getElementById("bookModal").style.display = 'none';
+    document.getElementById("bookModalCartButton").setAttribute('data-can-click', 'false');
+} */
+
+
+
 
 // document.getElementById('searchButton').addEventListener('click', getSearchInput);
 // document.getElementById('searchInput').addEventListener('change', getSearchInput)

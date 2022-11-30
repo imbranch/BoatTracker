@@ -1,4 +1,7 @@
-const mysql = require('mysql2');
+
+//NO LONGER NEED TO CONNECT TO DATABASE FOR NOW
+
+/* const mysql = require('mysql2');
 
 const db = mysql.createConnection({
     host: 'localhost',
@@ -13,4 +16,4 @@ db.connect((err) =>{
     console.log("Connected to MySql Server");
 });
 
-module.exports = db;
+module.exports = db; */

@@ -1,4 +1,6 @@
-const path = require('path');
+// NO LONGER NEED TO CONNECT TO THE DATABASE FOR NOW
+
+/* const path = require('path');
 const database = require(path.resolve(__dirname, '../database/database'));
 
 exports.search = function(req, res) {
@@ -17,9 +19,9 @@ exports.search = function(req, res) {
             }
         });
     }
-};
+}; */
 
-exports.getBook = function(req, res) {
+/* exports.getBook = function(req, res) {
     if (req.params.bookid && !isNaN(parseInt(req.params.bookid))) {
         const bookId = parseInt(req.params.bookid);
         database.query('CALL getBook(?);',
@@ -65,4 +67,4 @@ exports.addToCart = function(req, res) {
             }
         });
     }
-}
+} */

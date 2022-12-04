@@ -1,7 +1,10 @@
 import http from '/util/http.js';
 // import scrollToTop from '/util/scrollToTop.js';
 
-const localUrl = `${location.protocol}//${location.host}`;
+//const localUrl = `${location.protocol}//${location.host}`;
+
+
+//Map Filtering Funcitonality
 
 // CREATE NEW FUNCTION FOR APPLY BUTTON HERE
 
@@ -9,11 +12,15 @@ const localUrl = `${location.protocol}//${location.host}`;
 
 
 
+//funciton call on button click
+document.getElementById('filterButton').addEventListener('click', FuncitonNameHere);
 
 
-//-----------------------------------------------------------------
+//------------------------------------------------------------------------------
 
-function loadSearchResults(res) {
+//OLD FUNCTIONS THAT WE DONT NEED, YOU CAN REFERENCE IF NEEEDED
+
+/* function loadSearchResults(res) {
     clearSearchResults();
     const resultArea = document.getElementById("resultArea");
     res.forEach((book) => {
@@ -76,9 +83,9 @@ function getSearchInput() {
         document.getElementById("noResult").style.display = 'inline-block';
         document.getElementById("resultArea").style.display = 'none';
     });
-}
+} */
 
-document.getElementById('filterButton').addEventListener('click', getSearchInput);
+// document.getElementById('filterButton').addEventListener('click', getSearchInput);
 
 
 

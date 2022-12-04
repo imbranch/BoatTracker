@@ -3,6 +3,16 @@ import http from '/util/http.js';
 
 const localUrl = `${location.protocol}//${location.host}`;
 
+// CREATE NEW FUNCTION FOR APPLY BUTTON HERE
+
+
+
+
+
+
+
+//-----------------------------------------------------------------
+
 function loadSearchResults(res) {
     clearSearchResults();
     const resultArea = document.getElementById("resultArea");

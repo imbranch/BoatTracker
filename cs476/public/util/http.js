@@ -1,3 +1,5 @@
+//CURRENTLY NOT NEEDED RIGHT NOW, IGNORE
+
 function getData(url) {
     if (url) {
         const task = new Promise((resolve, reject) => {

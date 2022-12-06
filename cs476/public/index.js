@@ -8,12 +8,20 @@ import http from '/util/http.js';
 
 // CREATE NEW FUNCTION FOR APPLY BUTTON HERE
 
+function loadMap(){
+    //clearResults();
 
-
-
+    const map = document.getElementById("mapArea");
+    const boatType = document.getElementById("typeInput").value;
+    const date = document.getElementById("dateSelect").value;
+    const filePath = "Maps/"+boatType+"/"+date+".html";
+    console.log(filePath);
+    map.setAttribute("src", filePath);
+    //map.src = filePath;
+}
 
 //funciton call on button click
-document.getElementById('filterButton').addEventListener('click', FuncitonNameHere);
+document.getElementById('filterButton').addEventListener('click', loadMap);
 
 
 //------------------------------------------------------------------------------

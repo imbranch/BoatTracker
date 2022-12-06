@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\cs476",
+    "\\cs476\\public"
   ],
-  "SelectedNode": "\\C:\\xampp\\htdocs\\BoatTracking",
+  "SelectedNode": "\\cs476\\public\\boats.html",
   "PreviewInSolutionExplorer": false
 }

@@ -1,59 +1,26 @@
 import http from '/util/http.js';
-import scrollToTop from '/util/scrollToTop.js';
+// import scrollToTop from '/util/scrollToTop.js';
 
-const localUrl = `${location.protocol}//${location.host}`;
+//const localUrl = `${location.protocol}//${location.host}`;
 
-let user = {
-    user_id: -1
-}
 
-function getStars(num) {
-    const value = Math.floor(num);
-    let stars = '';
-    for (let i = 0; i < value; i++) {
-        stars += '&starf;'
-    }
-    for (let i = value; i < 5; i++) {
-        stars += '&star;'
-    }
-    return stars;
-}
+//Map Filtering Funcitonality
 
-function loadBook(bookid) {
-    http.getData(`${localUrl}/discover/book/${bookid}`).then(response => {
-        const res = JSON.parse(response)
-        if (res.length > 0) {
-            const book = res[0];
-            document.getElementById("bookModal").setAttribute('data-book-id', book.book_id);
-            document.getElementById("bookModalTitle").innerHTML = `${book.title} <span id="bookModalLanguageCode">${book.language_code}</span>`;
-            document.getElementById("bookModalISBN13").innerHTML = book.isbn13;
-            document.getElementById("bookModalPublisherInformation").innerHTML = `Publisher: ${book.publisher}, ${book.publication_date}`;
-            document.getElementById("bookModalAuthors").innerHTML = book.authors;
-            document.getElementById("bookModalSubject").innerHTML = book.subject;
-            document.getElementById("bookModalPages").innerHTML = `${book.num_pages} pages`;
-            document.getElementById("bookModalRating").innerHTML = getStars(book.average_rating);
-            document.getElementById("bookModalRatingCount").innerHTML = `${book.average_rating} from ${book.ratings_count} reviews`;
-            document.getElementById("bookModalStock").innerHTML = `${book.item_count} in stock`;
-            if (book.item_count > 0 && user.user_id != -1) {
-                document.getElementById("bookModalCartButton").classList.add('bookModalCartButton');
-                document.getElementById("bookModalCartButton").classList.remove('bookModalCartButtonInactive');
-                document.getElementById("bookModalCartButton").setAttribute('data-can-click', 'true');
-            } else {
-                document.getElementById("bookModalCartButton").classList.remove('bookModalCartButton');
-                document.getElementById("bookModalCartButton").classList.add('bookModalCartButtonInactive');
-                document.getElementById("bookModalCartButton").setAttribute('data-can-click', 'false');
-            }
-            document.getElementById("bookModal").style.display = 'flex';
-        }
-    });
-}
+// CREATE NEW FUNCTION FOR APPLY BUTTON HERE
 
-function closeBookModal() {
-    document.getElementById("bookModal").style.display = 'none';
-    document.getElementById("bookModalCartButton").setAttribute('data-can-click', 'false');
-}
 
-function loadSearchResults(res) {
+
+
+
+//funciton call on button click
+document.getElementById('filterButton').addEventListener('click', FuncitonNameHere);
+
+
+//------------------------------------------------------------------------------
+
+//OLD FUNCTIONS THAT WE DONT NEED, YOU CAN REFERENCE IF NEEEDED
+
+/* function loadSearchResults(res) {
     clearSearchResults();
     const resultArea = document.getElementById("resultArea");
     res.forEach((book) => {
@@ -90,15 +57,15 @@ function clearSearchResults() {
 }
 
 function getSearchInput() {
-    const text = document.getElementById("searchInput").value;
+    // const text = document.getElementById("searchInput").value;
     const sort = document.getElementById("sortInput").value;
     const subject = document.getElementById("subjectInput").value;
     const dateStart = document.getElementById("dateStart").value;
     const dateEnd = document.getElementById("dateEnd").value;
-    const minRating = document.getElementById("ratingInput").value;
+    // const minRating = document.getElementById("ratingInput").value;
     const available = document.getElementById("availableInput").checked ? 1 : 0;
-    const pageMin = document.getElementById("pageStart").value;
-    const pageMax = document.getElementById("pageEnd").value;
+    // const pageMin = document.getElementById("pageStart").value;
+    // const pageMax = document.getElementById("pageEnd").value;
 
     http.getData(`${localUrl}/discover/search?text=${text}&sort=${sort}&subject=${subject}&datestart=${dateStart}&dateend=${dateEnd}&minrating=${minRating}&available=${available}&pagemin=${pageMin}&pagemax=${pageMax}`).then(response => {
         const res = JSON.parse(response);
@@ -116,15 +83,70 @@ function getSearchInput() {
         document.getElementById("noResult").style.display = 'inline-block';
         document.getElementById("resultArea").style.display = 'none';
     });
+} */
+
+// document.getElementById('filterButton').addEventListener('click', getSearchInput);
+
+
+
+/* let user = {
+    user_id: -1
 }
+ */
+/* function getStars(num) {
+    const value = Math.floor(num);
+    let stars = '';
+    for (let i = 0; i < value; i++) {
+        stars += '&starf;'
+    }
+    for (let i = value; i < 5; i++) {
+        stars += '&star;'
+    }
+    return stars;
+} */
 
-document.getElementById('searchButton').addEventListener('click', getSearchInput);
-document.getElementById('filterButton').addEventListener('click', getSearchInput);
-document.getElementById('searchInput').addEventListener('change', getSearchInput)
+/* function loadBook(bookid) {
+    http.getData(`${localUrl}/discover/book/${bookid}`).then(response => {
+        const res = JSON.parse(response)
+        if (res.length > 0) {
+            const book = res[0];
+            document.getElementById("bookModal").setAttribute('data-book-id', book.book_id);
+            document.getElementById("bookModalTitle").innerHTML = `${book.title} <span id="bookModalLanguageCode">${book.language_code}</span>`;
+            document.getElementById("bookModalISBN13").innerHTML = book.isbn13;
+            document.getElementById("bookModalPublisherInformation").innerHTML = `Publisher: ${book.publisher}, ${book.publication_date}`;
+            document.getElementById("bookModalAuthors").innerHTML = book.authors;
+            document.getElementById("bookModalSubject").innerHTML = book.subject;
+            document.getElementById("bookModalPages").innerHTML = `${book.num_pages} pages`;
+            document.getElementById("bookModalRating").innerHTML = getStars(book.average_rating);
+            document.getElementById("bookModalRatingCount").innerHTML = `${book.average_rating} from ${book.ratings_count} reviews`;
+            document.getElementById("bookModalStock").innerHTML = `${book.item_count} in stock`;
+            if (book.item_count > 0 && user.user_id != -1) {
+                document.getElementById("bookModalCartButton").classList.add('bookModalCartButton');
+                document.getElementById("bookModalCartButton").classList.remove('bookModalCartButtonInactive');
+                document.getElementById("bookModalCartButton").setAttribute('data-can-click', 'true');
+            } else {
+                document.getElementById("bookModalCartButton").classList.remove('bookModalCartButton');
+                document.getElementById("bookModalCartButton").classList.add('bookModalCartButtonInactive');
+                document.getElementById("bookModalCartButton").setAttribute('data-can-click', 'false');
+            }
+            document.getElementById("bookModal").style.display = 'flex';
+        }
+    });
+} */
 
-document.getElementById('bookCloseButton').addEventListener('click', closeBookModal);
+/* function closeBookModal() {
+    document.getElementById("bookModal").style.display = 'none';
+    document.getElementById("bookModalCartButton").setAttribute('data-can-click', 'false');
+} */
 
-document.getElementById('bookModalCartButton').addEventListener('click', () => {
+
+
+
+// document.getElementById('searchButton').addEventListener('click', getSearchInput);
+// document.getElementById('searchInput').addEventListener('change', getSearchInput)
+// document.getElementById('bookCloseButton').addEventListener('click', closeBookModal);
+
+/* document.getElementById('bookModalCartButton').addEventListener('click', () => {
     if (document.getElementById('bookModalCartButton').getAttribute('data-can-click') == 'true' && user.user_id != -1) {
         const bookId = document.getElementById('bookModal').getAttribute('data-book-id');
         http.postData(`${localUrl}/discover/addtocart?userid=${user.user_id}&password=${user.password}&bookid=${bookId}`).then(response => {
@@ -136,9 +158,9 @@ document.getElementById('bookModalCartButton').addEventListener('click', () => {
         closeBookModal();
         loadCart();
     }
-})
+}) */
 
-function switchPage(e) {
+/* function switchPage(e) {
     const pageId = e.getAttribute("data-page");
     if (pageId == "cart" && user.user_id == -1) {
         switchPage(document.getElementById('accountNavButton'));
@@ -158,21 +180,21 @@ function switchPage(e) {
         document.getElementById(pageId).classList.add('sectionActive');
         scrollToTop();
     }
-}
+} */
 
-const navElements = document.getElementsByClassName("navElement");
+/* const navElements = document.getElementsByClassName("navElement");
 for(var i = 0; i < navElements.length; i++) {
     navElements[i].addEventListener('click', (e) => {
         switchPage(e.target);
     });
-}
+} */
 
-const ratingInput = document.getElementById('ratingInput');
+/* const ratingInput = document.getElementById('ratingInput');
 ratingInput.addEventListener('change', () => {
     document.getElementById('ratingInputResult').innerHTML = `${ratingInput.value} <span style="font-size: 14pt">${getStars(ratingInput.value)}</span>`
-});
+}); */
 
-const signInForm = document.getElementById('signInForm');
+/* const signInForm = document.getElementById('signInForm');
 const registerForm = document.getElementById('registerForm');
 const signInButton = document.getElementById('signInButton')
 const registerButton = document.getElementById('registerButton')
@@ -187,11 +209,11 @@ registerButton.addEventListener('click', () => {
     signInButton.classList.remove('underline');
     signInForm.classList.add('accountFormInactive');
     registerForm.classList.remove('accountFormInactive');
-});
+}); */
 
 // Account functionality
 
-function createAccount() {
+/* function createAccount() {
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
     const firstname = document.getElementById('firstName').value;
@@ -217,9 +239,9 @@ function createAccount() {
             document.getElementById('accountPageSignedOut').style.display = 'none';
         }
     })
-}
+} */
 
-document.getElementById('createAccountButton').addEventListener('click', createAccount);
+/* document.getElementById('createAccountButton').addEventListener('click', createAccount);
 
 function signIn() {
     const username = document.getElementById('signInUsername').value;
@@ -247,7 +269,7 @@ function deleteAccount() {
             location.reload();
         }
     });
-}
+} */
 
 /* document.getElementById("deleteAccountButton").addEventListener('click', deleteAccount);
 document.getElementById("logoutButton").addEventListener('click', () => {

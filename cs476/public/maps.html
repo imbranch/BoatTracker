@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/filtering.css" type="text/css">
+    <link rel="stylesheet" href="styles/style.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>BoatTracker</title>
+</head>
+
+<body>
+    <div id="container">
+        <nav>
+            <a href="boats.html" class="navElement" data-page="filter">Boats</a>
+            <a href="maps.html" class="navElement navActive" data-page="filter">Maps</a>
+            <a href="index.html" class="navElement" data-page="filter">Home</a>
+            <div class="navElement navTitle">Sailing Data Tracker</div>
+        </nav>
+        <main>
+            <section class="sectionActive" id="filter"> 
+                <div id="contentWrapper">
+                    <div id="filterArea">
+                        <label for="boatInput">Boat Type</label>
+                        <select class="boatDropdown" id="typeInput" name="typeInput">
+                            <option value="all">All</option>
+                            <option value="classA">Class A</option>
+                            <option value="classB">Class B</option>
+                            <option value="classC">Class C</option>
+                            <option value="classD">Class D</option>
+                        </select>
+                        <hr>
+                        <label for="dateStart">Sailing Date</label>
+                        <input class="dateInput" type="date" id="dateSelect" name="dateSelect" value="2022-06-01"
+                            min="2022-06-01" max="2022-08-31">
+
+                            <button name="filterButton" id="filterButton">Apply</button>
+                    </div>
+                    <div id="noResult">No results to show</div>
+
+                    <!-- map display area -->
+                    <div id="resultArea">
+                        <iframe id="mapArea"
+                        src="Maps/classA/2022-06-01.html" 
+                        frameborder="0"
+                      ></iframe>
+                    </div>
+                        <!-- <label for="sailInput">Sail Number</label> <label for="sortInput">Sail Number</label> -->
+            <!--             <select class="searchDropdown" id="sortInput" name="sortInput">
+                            <option value="ten">All</option>
+                            <option value="popular">1</option>
+                            <option value="best">2</option>
+                            <option value="newest">3</option>
+                            <option value="oldest">4</option>
+                            <option value="shortest">5</option>
+                            <option value="longest">6</option>
+                            <option value="seven">7</option>
+                            <option value="eight">8</option>
+                            <option value="nine">9</option>
+                        </select>
+                        <hr> -->
+                        
+
+                        <!-- <label for="dateEnd">to</label>
+                        <input class="dateInput" type="date" id="dateEnd" name="dateEnd" value="2021-12-31"
+                            min="1900-01-01" max="2021-12-31"> -->
+                       
+                        <!-- <label for="ratingInput">Minimum rating</label>
+                        <input type="range" step="0.1" min="0" max="5" value="0" name="ratingInput" id="ratingInput">
+                        <label id="ratingInputResult" style="text-align: center; color: #333;">0 <span
+                                style="font-size: 14pt;">&star;&star;&star;&star;&star;</span></label> -->
+                        <!-- <hr>
+                        <div>
+                            <input type="checkbox" id="availableInput" name="availableInput" value="available">
+                            <label class="unselectable" for="availableInput" style="cursor: pointer">Include
+                                Winners</label>
+                        </div>
+                        <hr> -->
+                        <!--  <label for="pageStart">Page length from</label>
+                        <input class="pageInput" type="number" min="1" max="10000" step="1" id="pageStart" name="pageStart" value="1">
+
+                        <label for="pageEnd">to</label>
+                        <input class="pageInput" type="number" min="1" max="10000" step="1" id="pageEnd" name="pageEnd" value="10000"> -->
+                </div>    
+        </main>
+    </div>
+</body>
+<script type="module" src="index.js"></script>
+
+</html>

@@ -63,17 +63,22 @@ for sailBoat in allboats:
 cursor.close()
 cnx.close()
 
-    
+colors = ['red', 'blue', 'green', 'purple', 'orange', 'darkred', 'lightred', 'beige', 'darkblue', 'darkgreen', 'cadetblue', 
+          'darkpurple', 'white', 'pink', 'lightblue', 'lightgreen', 'gray', 'black', 'lightgray']
+
+x = 0 
 # A1cords = results
 for boatType in boatsy:
     print("HI")
     m=folium.Map(location=[42.571688,-88.522861], zoom_start=14)
     for boat in allboats:
+        if(x == len(colors)):
+            x = 0
         if(boat.bType == boatType):
             f1=folium.FeatureGroup(boat.getName())
-            line_1=folium.vector_layers.PolyLine(boat.getResults(),tooltip=boat.getName(),weight=1).add_to(f1)
+            line_1=folium.vector_layers.PolyLine(boat.getResults(),tooltip=boat.getName(),color=colors[x],weight=1).add_to(f1)
             f1.add_to(m) 
-        
+            x = x + 1
     folium.LayerControl().add_to(m)
     pathname = f"/Users/bean/Desktop/maps/{boatType}/{today}.html"
     m.save(pathname)

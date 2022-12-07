@@ -8,7 +8,6 @@ results = []
 # we now know the date
 today = datetime.date.today()
 
-
 import mysql.connector
 
 class Boat:

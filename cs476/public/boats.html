@@ -4,23 +4,33 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- custom styles -->
     <link rel="stylesheet" href="styles/filtering.css" type="text/css">
     <link rel="stylesheet" href="styles/style.css" type="text/css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>BoatTracker</title>
 </head>
 
 <body>
     <div id="container">
-        <nav>
-            <a href="boats.html" class="navElement navActive" data-page="filter">Boats</a>
-            <a href="maps.html" class="navElement" data-page="filter">Maps</a>
-            <a href="index.html" class="navElement" data-page="filter">Home</a>
-            <div class="navTitle unselectable">Sailing Data Tracker</div>
+        <!-- Navigation -->
+        <nav class="navbar">
+            <a href="index.html" class="logo">
+              <img src="img/Untitled design (5).png" alt="Sailing Data Tracker logo">
+              Sailing Data Tracker
+            </a>
+            <ul class="nav-links">
+              <li class="navElement"><a href="index.html" data-page="filter">Home</a></li>
+              <li class="navElement"><a href="maps.html" data-page="filter">Maps</a></li>
+              <li class="navElement navActive"><a href="boats.html" data-page="filter">Boats</a></li>
+            </ul>
         </nav>
+        <!-- End of Navigation -->
         <main>
             <section class="sectionActive" id="filter"> 
                 <div id="contentWrapper">
+                    <!-- Map filter -->
                     <div id="filterArea">
                         <label for="boatInput">Boat Type</label>
                         <select class="boatDropdown" id="typeInput" name="typeInput">
@@ -37,8 +47,8 @@
 
                             <button name="filterButton" id="filterButton" onclick="loadMap()">Apply</button>
                     </div>
+                    <!-- End of Map filter -->
                     <div id="noResult">No results to show</div>
-
                     <!-- map display area -->
                     <div id="resultArea">
                         <iframe id="mapArea"
@@ -46,19 +56,22 @@
                         frameborder="0"
                       ></iframe>
                     </div>
-                    </div>    
+                    <!-- End of Map display area -->
+                </div> 
+            </section>   
         </main>
     </div>
+    <!-- custom JS -->
+    <script > 
+        function loadMap(){
+            const map = document.getElementById("mapArea");
+            const boatType = document.getElementById("typeInput").value;
+            const date = document.getElementById("dateSelect").value;
+            const filePath = "Maps/"+boatType+"/"+date+".html";
+            console.log(filePath);
+            map.setAttribute("src", filePath);
+        }
+    </script>
 </body>
-<script > 
-function loadMap(){
-    const map = document.getElementById("mapArea");
-    const boatType = document.getElementById("typeInput").value;
-    const date = document.getElementById("dateSelect").value;
-    const filePath = "Maps/"+boatType+"/"+date+".html";
-    console.log(filePath);
-    map.setAttribute("src", filePath);
-}
-</script>
 
 </html>

@@ -1,154 +1,147 @@
 /*Filter Page*/
 
 #contentWrapper {
-  display: flex;
-  align-items: flex-start;
-  margin: 140px 80px;
+	display: flex;
+	align-items: flex-start;
+	margin: 130px 80px;
 }
 
 /*Filter section*/
 #filterArea {
-  background-color: white;
-  border-top: 20px solid #333;
-  padding: 20px;
-  min-width: 280px;
-  float: left;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 3px 3px 10px #ccc;
+	background-color: white;
+	border-top: 20px solid #333;
+	padding: 20px;
+	min-width: 280px;
+	float: left;
+	display: flex;
+	flex-direction: column;
+	box-shadow: 3px 3px 10px #ccc;
 }
 
 #filterArea hr {
-  border-style: inset;
-  border-width: 1px;
-  border-color: #eee;
-  width: 100%;
-  margin: 20px 0px;
+	border-style: inset;
+	border-width: 1px;
+	border-color: #eee;
+	width: 100%;
+	margin: 20px 0px;
 }
 
 .dateInput {
-  background-color: #eee;
-  padding: 10px 10px;
-  height: 40px;
-  border: none;
-  font-size: 10pt;
-  transition: border-left 0.1s;
-  border-left: 0px solid #f50;
+	background-color: #eee;
+	padding: 10px 10px;
+	height: 40px;
+	border: none;
+	font-size: 10pt;
+	transition: border-left 0.1s;
+	border-left: 0px solid #f50;
 }
 
 .dateInput:focus {
-  outline: none;
-  border-left: 10px solid #f50;
+	outline: none;
+	border-left: 10px solid #f50;
 }
 
 #filterButton {
-  border: none;
-  background-color: rgb(0, 204, 255);
-  color: white;
-  padding: 10px;
-  cursor: pointer;
-  border-radius: 10px;
-  margin-left: 10%;
-  margin-top: 40px;
-  width: 80%;
+	border: none;
+	background-color: rgb(0, 204, 255);
+	color: white;
+	padding: 10px;
+	cursor: pointer;
+	border-radius: 10px;
+	margin-left: 10%;
+	margin-top: 40px;
+	width: 80%;
 }
 
 #filterButton:hover {
-  background-color: #005ce6;
+	background-color: #005ce6;
 }
 
 #filterButton:focus {
-  outline: none;
+	outline: none;
 }
 
 #filterButton:active {
-  background-color: #00cca0;
+	background-color: #00cca0;
 }
-
 
 /*Result section*/
 #noResult {
-  color: #333;
-  font-size: 16pt;
-  font-family: Georgia;
-  margin-left: 10%;
-  width: 70%;
-  display: none;
+	color: #333;
+	font-size: 16pt;
+	font-family: Georgia;
+	margin-left: 10%;
+	width: 70%;
+	display: none;
 }
 
 #resultArea {
-  margin-left: 10%;
-  width: 100%;
-  min-width: 800px;
-  height: 90%;
-  min-height: 800px;
-  float: left;
-  display: flex;
-  flex-direction: row;
-  box-shadow: 3px 3px 10px #ccc;
+	margin-left: 10%;
+	width: 100%;
+	min-width: 800px;
+	height: 90%;
+	min-height: 800px;
+	float: left;
+	display: flex;
+	flex-direction: row;
+	box-shadow: 3px 3px 10px #ccc;
 }
 
 #mapArea {
-  margin-left: 0%;
-  width: 100%;
-  min-width: 800px;
-  height: 90%;
-  min-height: 800px;
-  float: left;
-  display: flex;
-  flex-direction: row;
+	margin-left: 0%;
+	width: 100%;
+	min-width: 800px;
+	height: 90%;
+	min-height: 800px;
+	float: left;
+	display: flex;
+	flex-direction: row;
 }
 
 .bookResult {
-  height: 100px;
-  padding: 10px 40px;
-  float: left;
-  background-color: white;
-  border-bottom: 1px solid #ddd;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  border-left: 0px solid #f50;
-  transition: border-left 0.1s;
-  cursor: pointer;
+	height: 100px;
+	padding: 10px 40px;
+	float: left;
+	background-color: white;
+	border-bottom: 1px solid #ddd;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	border-left: 0px solid #f50;
+	transition: border-left 0.1s;
+	cursor: pointer;
 }
 
 .bookResult:hover {
-  border-left: 20px solid #f50;
-  border-bottom: 0px solid #ddd;
-  background-color: #eee;
+	border-left: 20px solid #f50;
+	border-bottom: 0px solid #ddd;
+	background-color: #eee;
 }
 
 .bookResult:hover .bookTitle {
-  color: black;
+	color: black;
 }
 
 .bookResult:active {
-  background-color: #e9e9e9;
+	background-color: #e9e9e9;
 }
 
 .bookTitle {
-  color: #333;
-  font-size: 17pt;
+	color: #333;
+	font-size: 17pt;
 }
 
 .bookInformationContainer {
-  display: flex;
-  justify-content: space-between;
-  font-family: Georgia;
-  color: #333;
-  line-height: 36px;
+	display: flex;
+	justify-content: space-between;
+	font-family: Georgia;
+	color: #333;
+	line-height: 36px;
 }
 
 .bookInformationContainer span {
-  color: #f50;
+	color: #f50;
 }
-
-
-
-
-
-
 
 /* old filters not used */
 /* #ratingInput {
@@ -209,7 +202,6 @@ input[type="range"]:focus::-webkit-slider-runnable-track {
   border-left: 10px solid #f50;
 }
  */
-
 
 /*Search*/
 
@@ -291,9 +283,7 @@ input[type="range"]:focus::-webkit-slider-runnable-track {
   border-left: 10px solid #333;
 } */
 
-
 /*************************/
-
 
 /* Book modal */
 /* .modal {

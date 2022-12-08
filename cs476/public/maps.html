@@ -68,8 +68,52 @@
             const date = document.getElementById("dateSelect").value;
             const filePath = "Maps/"+boatType+"/"+date+".html";
             console.log(filePath);
-            map.setAttribute("src", filePath);
+            //map.setAttribute("src", filePath);
+
+            //checking the existance of boat type or date
+            const boat_types = ['A', 'B'] //add boat types here
+            const datesA = ['2022-06-01', '2022-06-11', '2022-07-12', '2022-12-07'] // add dates for boat type A here
+            const datesB = ['2022-08-21', '2022-08-25'] // add dates for boat type B here
+            const datesC = ['2022-01-02', '2022-01-03', '2022-01-04'] // add dates for boat type C here
+            const datesD = ['2022-01-02', '2022-01-03', '2022-01-04'] // add dates for boat type D
+            if(!boat_types.includes(boatType)){
+              //  alert('boat type does not exist!');
+              map.setAttribute("src", 'error.html');
+            }else {
+            var dateExists = true;
+            switch(boatType){
+                case 'A':
+                    if(!datesA.includes(date)){
+                        dateExists = false;
+                    }
+                    break; 
+
+                case 'B':
+                    if(!datesB.includes(date)){
+                        dateExists = false;   
+                    }
+                    break;
+
+                case 'C':
+                    if(!datesC.includes(date)){
+                        dateExists = false;
+                    }
+                    break; 
+
+                case 'D':
+                    if(!datesD.includes(date)){
+                        dateExists = false;
+                    }
+                    break; 
+                }
+                if(!dateExists){
+                    map.setAttribute("src", 'error.html');
+                }else{
+                //do something
+                map.setAttribute("src", filePath);
+            }
         }
+    }
     </script>
 </body>
 

@@ -21,27 +21,52 @@
         </nav>
         <main>
             <section class="sectionActive">
-                <div id="contentWrapper">
-                    <div class="boatContainer">
-                        <img src="img/PizzaPizza.png" alt="PizzaPizza">
-                        <p>
-                            Ring ring ring ring ring ring, banana phone.
-                        </p>
+                <section class="boatContainer">
+                    <div class="image">
+                        <img src="img/PizzaPizza.png" alt="PizzaPizza" />
+                    </div><div class="content">
+                        <h2>Just 2 dudes</h2>
+                        <p>"Hey dude, how's it going?" <br>
+                            "Pretty good, you?" <br>
+                            "That's good, I'm good." <br>
+                            "That's also good." <br>
+                            "Seems like everything is good."</p>
                     </div>
-                </div>
+                </section>
+                <section class="boatContainer">
+                    <div class="content">
+                        <h2>Pizza Palace</h2>
+                        <p>"Halt! State your business in the Pizza Palace!"<br>
+                            "I bring news for my lord."<br>
+                            "Very well, but the lord is currently away. I will take this news in his steed."<br>
+                            "The barbaric PieMen have invaded our territory in the south"<br>
+                            "I shall deliver this news posthaste. Worry not, PizzaMan"</p>
+                    </div>
+                    <div class="image">
+                        <img src="img/PizzaPizza.png" alt="PizzaPizza" />
+                    </div>
+                </section>
+                <section class="boatContainer">
+                    <div class="image">
+                        <img src="img/PizzaPizza.png" alt="PizzaPizza" />
+                    </div>
+                    <div class="content">
+                        <h2>Humberto</h2>
+                        <p>Once upon a time, there was this dude named Humberto.<br>
+                            He sang, and ate, and sang, and ate everyday.<br>
+                            But one day, he thought "Yo, what is up?"<br>
+                            He began to contempate the purpose of his actions.<br>
+                            Then he started pumping his muscles, lifting some weights.<br>
+                            Until he was ripped af. Humberto went from a buff dude who ate<br>
+                            all the time to a buff dude who didn't eat all the time.<br>
+                            To this day, he still retains the original white T-shirt he<br>
+                            wore at the beginning of his journey. Though he still enjoys the sweet<br>
+                            and savory pizza goodness every once in a while.<br><br>
+                            The End</p>
+                    </div>
+                </section>
             </section>
         </main>
     </div>
 </body>
-<script > 
-function loadMap(){
-    const map = document.getElementById("mapArea");
-    const boatType = document.getElementById("typeInput").value;
-    const date = document.getElementById("dateSelect").value;
-    const filePath = "Maps/"+boatType+"/"+date+".html";
-    console.log(filePath);
-    map.setAttribute("src", filePath);
-}
-</script>
-
 </html>

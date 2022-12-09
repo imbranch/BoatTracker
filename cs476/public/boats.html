@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles/filtering.css" type="text/css">
     <link rel="stylesheet" href="styles/style.css" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles/boats.css" type="text/css">
     <title>BoatTracker</title>
 </head>
 
@@ -19,34 +20,16 @@
             <div class="navTitle unselectable">Sailing Data Tracker</div>
         </nav>
         <main>
-            <section class="sectionActive" id="filter"> 
+            <section class="sectionActive">
                 <div id="contentWrapper">
-                    <div id="filterArea">
-                        <label for="boatInput">Boat Type</label>
-                        <select class="boatDropdown" id="typeInput" name="typeInput">
-                            <option value="all">All</option>
-                            <option value="classA">Class A</option>
-                            <option value="classB">Class B</option>
-                            <option value="classC">Class C</option>
-                            <option value="classD">Class D</option>
-                        </select>
-                        <hr>
-                        <label for="dateStart">Sailing Date</label>
-                        <input class="dateInput" type="date" id="dateSelect" name="dateSelect" value="2022-06-01"
-                            min="2022-06-01" max="2022-08-31">
-
-                            <button name="filterButton" id="filterButton" onclick="loadMap()">Apply</button>
+                    <div class="boatContainer">
+                        <img src="img/PizzaPizza.png" alt="PizzaPizza">
+                        <p>
+                            Ring ring ring ring ring ring, banana phone.
+                        </p>
                     </div>
-                    <div id="noResult">No results to show</div>
-
-                    <!-- map display area -->
-                    <div id="resultArea">
-                        <iframe id="mapArea"
-                        src="test" 
-                        frameborder="0"
-                      ></iframe>
-                    </div>
-                    </div>    
+                </div>
+            </section>
         </main>
     </div>
 </body>

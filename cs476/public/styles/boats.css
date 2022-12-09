@@ -1,0 +1,20 @@
+#contentWrapper {
+	display: flex;
+	align-items: flex-start;
+	margin: 80px 0;
+}
+
+.boatContainer {
+    display: flex;
+    height: 400px;
+}
+
+.boatContainer img {
+    width: 650px;
+}
+
+.boatContainer p {
+    align-items: center;
+    display:flex;
+    flex: 1;
+}

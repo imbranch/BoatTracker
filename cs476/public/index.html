@@ -5,10 +5,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- font awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/46e6ae657e.js" crossorigin="anonymous"></script>
     <!-- custom styles -->
     <link rel="stylesheet" href="styles/filtering.css" type="text/css">
     <link rel="stylesheet" href="styles/style.css" type="text/css">
+    <link rel="stylesheet" href="styles/home.css" type="text/css">
     <title>BoatTracker</title>
 </head>
 
@@ -28,36 +29,47 @@
         </nav>
         <!-- End of Navigation -->
         <main>
-            <section class="sectionActive" id="filter"> 
-                <div id="contentWrapper">
-                    <!-- Map filter -->
-                    <div id="filterArea">
-                        <label for="boatInput">Boat Type</label>
-                        <select class="boatDropdown" id="typeInput" name="typeInput">
-                            <option value="A">Class A</option>
-                            <option value="B">Class B</option>
-                            <option value="C">Class C</option>
-                            <option value="D">Class D</option>
-                        </select>
-                        <hr>
-                        <label for="dateStart">Sailing Date</label>
-                        <input class="dateInput" type="date" id="dateSelect" name="dateSelect" value="2022-06-01"
-                            min="2022-06-01" max="2022-08-31">
-
-                            <button name="filterButton" id="filterButton" onclick="loadMap()">Apply</button>
-                    </div>
-                   <!--  End of Map filter -->
-                    <div id="noResult">No results to show</div>
-                    <!-- map display area -->
-                    <div id="resultArea">
-                        <iframe id="mapArea"
-                        src="test" 
-                        frameborder="0"
-                      ></iframe>
-                    </div>
-                    <!-- End of map display area -->
+            <!-- Carousel -->
+            <section class=""> 
+                <div class="homepage">
+                    <div class="headings">
+                        <h1 class="headings-title">Welcome to the Boat Tracking Site</h1>
+                        <h3 class="headings-subtitle">Where we track sailing boats</h3>
+                    </div> 
                 </div>
             </section>
+            <!-- End of Carousel -->
+            
+            <!-- Question section -->
+            <section class="question">
+                <div class="question-items">
+                    <!-- single question first -->
+                    <div class="question-grey">
+                        <a href="maps.html" class="question-icon">
+                            <i class="fa-solid fa-map-location-dot"></i>
+                        </a>
+                        <div class="question-text">
+                            <h4 class="question-title">
+                                looking to track your boat?
+                            </h4>
+                            <p class="question-info">Visit our maps page by clicking the map icon to the side to track your boat</p>
+                        </div>
+                    </div>
+                    <!-- single question second -->
+                    <div class="question-yellow">
+                        <a href="boats.html" class="question-icon">
+                            <i class="fa-solid fa-sailboat"></i>
+                        </a>
+                        <div class="question-text">
+                            <h4 class="question-title">
+                                Not sure what type of boat?
+                            </h4>
+                            <p class="question-info">Visit our boat page by clicking the boat icon to the side to learn more</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- end of question section -->
         </main>
     </div>
     <!-- custom JS -->

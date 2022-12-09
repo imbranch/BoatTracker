@@ -30,6 +30,7 @@ body {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	z-index: 10;
 }
 
 .nav-links {
@@ -44,7 +45,7 @@ nav {
 	height: 80px;
 	padding-left: 30px;
 	padding-right: 5%;
-	background-color: #333;
+	background-color: #212529;
 	overflow: hidden;
 }
 
@@ -108,10 +109,6 @@ nav {
 /*Main Content Container*/
 main {
 	width: 100%;
-}
-
-section {
-	display: none;
 }
 
 .sectionActive {

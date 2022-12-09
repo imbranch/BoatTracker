@@ -4,31 +4,40 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- custom styles -->
     <link rel="stylesheet" href="styles/filtering.css" type="text/css">
     <link rel="stylesheet" href="styles/style.css" type="text/css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>BoatTracker</title>
 </head>
 
 <body>
     <div id="container">
-        <nav>
-            <a href="boats.html" class="navElement" data-page="filter">Boats</a>
-            <a href="maps.html" class="navElement navActive" data-page="filter">Maps</a>
-            <a href="index.html" class="navElement" data-page="filter">Home</a>
-            <div class="navTitle unselectable">Sailing Data Tracker</div>
+        <!-- Navigation -->
+        <nav class="navbar">
+            <a href="index.html" class="logo">
+              <img src="img/Untitled design (5).png" alt="Sailing Data Tracker logo">
+              Sailing Data Tracker
+            </a>
+            <ul class="nav-links">
+              <li class="navElement"><a href="index.html" data-page="filter">Home</a></li>
+              <li class="navElement navActive"><a href="maps.html" data-page="filter">Maps</a></li>
+              <li class="navElement"><a href="boats.html" data-page="filter">Boats</a></li>
+            </ul>
         </nav>
+        <!-- End of Navigation -->
         <main>
             <section class="sectionActive" id="filter"> 
                 <div id="contentWrapper">
+                    <!-- Map filter -->
                     <div id="filterArea">
                         <label for="boatInput">Boat Type</label>
                         <select class="boatDropdown" id="typeInput" name="typeInput">
-                            <option value="all">All</option>
-                            <option value="classA">Class A</option>
-                            <option value="classB">Class B</option>
-                            <option value="classC">Class C</option>
-                            <option value="classD">Class D</option>
+                            <option value="A">Class A</option>
+                            <option value="B">Class B</option>
+                            <option value="C">Class C</option>
+                            <option value="D">Class D</option>
                         </select>
                         <hr>
                         <label for="dateStart">Sailing Date</label>
@@ -37,28 +46,75 @@
 
                             <button name="filterButton" id="filterButton" onclick="loadMap()">Apply</button>
                     </div>
+                    <!-- End of Map filter -->
                     <div id="noResult">No results to show</div>
-
                     <!-- map display area -->
                     <div id="resultArea">
                         <iframe id="mapArea"
-                        src="test" 
+                        src="./Maps/blank.html" 
                         frameborder="0"
                       ></iframe>
                     </div>
-                    </div>    
+                   <!--  End of map display area -->
+                </div> 
+            </section>   
         </main>
     </div>
+    <!-- custom JS -->
+    <script > 
+        function loadMap(){
+            const map = document.getElementById("mapArea");
+            const boatType = document.getElementById("typeInput").value;
+            const date = document.getElementById("dateSelect").value;
+            const filePath = "Maps/"+boatType+"/"+date+".html";
+            console.log(filePath);
+            //map.setAttribute("src", filePath);
+
+            //checking the existance of boat type or date
+            const boat_types = ['A', 'B'] //add boat types here
+            const datesA = ['2022-06-01', '2022-06-11', '2022-07-12', '2022-12-07'] // add dates for boat type A here
+            const datesB = ['2022-08-21', '2022-08-25'] // add dates for boat type B here
+            const datesC = ['2022-01-02', '2022-01-03', '2022-01-04'] // add dates for boat type C here
+            const datesD = ['2022-01-02', '2022-01-03', '2022-01-04'] // add dates for boat type D
+            if(!boat_types.includes(boatType)){
+              //  alert('boat type does not exist!');
+              map.setAttribute("src", 'error.html');
+            }else {
+            var dateExists = true;
+            switch(boatType){
+                case 'A':
+                    if(!datesA.includes(date)){
+                        dateExists = false;
+                    }
+                    break; 
+
+                case 'B':
+                    if(!datesB.includes(date)){
+                        dateExists = false;   
+                    }
+                    break;
+
+                case 'C':
+                    if(!datesC.includes(date)){
+                        dateExists = false;
+                    }
+                    break; 
+
+                case 'D':
+                    if(!datesD.includes(date)){
+                        dateExists = false;
+                    }
+                    break; 
+                }
+                if(!dateExists){
+                    map.setAttribute("src", 'error.html');
+                }else{
+                //do something
+                map.setAttribute("src", filePath);
+            }
+        }
+    }
+    </script>
 </body>
-<script > 
-function loadMap(){
-    const map = document.getElementById("mapArea");
-    const boatType = document.getElementById("typeInput").value;
-    const date = document.getElementById("dateSelect").value;
-    const filePath = "Maps/"+boatType+"/"+date+".html";
-    console.log(filePath);
-    map.setAttribute("src", filePath);
-}
-</script>
 
 </html>

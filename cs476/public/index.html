@@ -4,61 +4,85 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/46e6ae657e.js" crossorigin="anonymous"></script>
+    <!-- custom styles -->
     <link rel="stylesheet" href="styles/filtering.css" type="text/css">
     <link rel="stylesheet" href="styles/style.css" type="text/css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles/home.css" type="text/css">
     <title>BoatTracker</title>
 </head>
 
 <body>
     <div id="container">
-        <nav>
-            <a href="boats.html" class="navElement" data-page="filter">Boats</a>
-            <a href="maps.html" class="navElement" data-page="filter">Maps</a>
-            <a href="index.html" class="navElement navActive" data-page="filter">Home</a>
-            <div class="navTitle unselectable">Sailing Data Tracker</div>
+        <!-- Navigation -->
+        <nav class="navbar">
+            <a href="index.html" class="logo">
+              <img src="img/Untitled design (5).png" alt="Sailing Data Tracker logo">
+              Sailing Data Tracker
+            </a>
+            <ul class="nav-links">
+              <li class="navElement navActive"><a href="index.html" data-page="filter">Home</a></li>
+              <li class="navElement"><a href="maps.html" data-page="filter">Maps</a></li>
+              <li class="navElement"><a href="boats.html" data-page="filter">Boats</a></li>
+            </ul>
         </nav>
+        <!-- End of Navigation -->
         <main>
-            <section class="sectionActive" id="filter"> 
-                <div id="contentWrapper">
-                    <div id="filterArea">
-                        <label for="boatInput">Boat Type</label>
-                        <select class="boatDropdown" id="typeInput" name="typeInput">
-                            <option value="all">All</option>
-                            <option value="classA">Class A</option>
-                            <option value="classB">Class B</option>
-                            <option value="classC">Class C</option>
-                            <option value="classD">Class D</option>
-                        </select>
-                        <hr>
-                        <label for="dateStart">Sailing Date</label>
-                        <input class="dateInput" type="date" id="dateSelect" name="dateSelect" value="2022-06-01"
-                            min="2022-06-01" max="2022-08-31">
-
-                            <button name="filterButton" id="filterButton" onclick="loadMap()">Apply</button>
+            <!-- Carousel -->
+            <section class=""> 
+                <div class="homepage">
+                    <div class="headings">
+                        <h1 class="headings-title">Welcome to the Boat Tracking Site</h1>
+                        <h3 class="headings-subtitle">Where we track sailing boats</h3>
+                    </div> 
+                </div>
+            </section>
+            <!-- End of Carousel -->
+            
+            <!-- Question section -->
+            <section class="question">
+                <div class="question-items">
+                    <!-- single question first -->
+                    <div class="question-grey">
+                        <a href="maps.html" class="question-icon">
+                            <i class="fa-solid fa-map-location-dot"></i>
+                        </a>
+                        <div class="question-text">
+                            <h4 class="question-title">
+                                looking to track your boat?
+                            </h4>
+                            <p class="question-info">Visit our maps page by clicking the map icon to the side to track your boat</p>
+                        </div>
                     </div>
-                    <div id="noResult">No results to show</div>
-
-                    <!-- map display area -->
-                    <div id="resultArea">
-                        <iframe id="mapArea"
-                        src="test" 
-                        frameborder="0"
-                      ></iframe>
+                    <!-- single question second -->
+                    <div class="question-yellow">
+                        <a href="boats.html" class="question-icon">
+                            <i class="fa-solid fa-sailboat"></i>
+                        </a>
+                        <div class="question-text">
+                            <h4 class="question-title">
+                                Not sure what type of boat?
+                            </h4>
+                            <p class="question-info">Visit our boat page by clicking the boat icon to the side to learn more</p>
+                        </div>
                     </div>
-                    </div>    
+                </div>
+            </section>
+            <!-- end of question section -->
         </main>
     </div>
+    <!-- custom JS -->
+    <script > 
+        function loadMap(){
+            const map = document.getElementById("mapArea");
+            const boatType = document.getElementById("typeInput").value;
+            const date = document.getElementById("dateSelect").value;
+            const filePath = "Maps/"+boatType+"/"+date+".html";
+            console.log(filePath);
+            map.setAttribute("src", filePath);
+        }
+    </script>
 </body>
-<script > 
-function loadMap(){
-    const map = document.getElementById("mapArea");
-    const boatType = document.getElementById("typeInput").value;
-    const date = document.getElementById("dateSelect").value;
-    const filePath = "Maps/"+boatType+"/"+date+".html";
-    console.log(filePath);
-    map.setAttribute("src", filePath);
-}
-</script>
 
 </html>

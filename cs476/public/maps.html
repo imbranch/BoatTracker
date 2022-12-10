@@ -4,31 +4,40 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- custom styles -->
     <link rel="stylesheet" href="styles/filtering.css" type="text/css">
     <link rel="stylesheet" href="styles/style.css" type="text/css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>BoatTracker</title>
 </head>
 
 <body>
     <div id="container">
-        <nav>
-            <a href="boats.html" class="navElement" data-page="filter">Boats</a>
-            <a href="maps.html" class="navElement navActive" data-page="filter">Maps</a>
-            <a href="index.html" class="navElement" data-page="filter">Home</a>
-            <div class="navTitle unselectable">Sailing Data Tracker</div>
+        <!-- Navigation -->
+        <nav class="navbar">
+            <a href="index.html" class="logo">
+              <img src="img/Untitled design (5).png" alt="Sailing Data Tracker logo">
+              Sailing Data Tracker
+            </a>
+            <ul class="nav-links">
+              <li class="navElement"><a href="index.html" data-page="filter">Home</a></li>
+              <li class="navElement navActive"><a href="maps.html" data-page="filter">Maps</a></li>
+              <li class="navElement"><a href="boats.html" data-page="filter">Boats</a></li>
+            </ul>
         </nav>
+        <!-- End of Navigation -->
         <main>
             <section class="sectionActive" id="filter"> 
                 <div id="contentWrapper">
+                    <!-- Map filter -->
                     <div id="filterArea">
                         <label for="boatInput">Boat Type</label>
                         <select class="boatDropdown" id="typeInput" name="typeInput">
-                            <option value="all">All</option>
-                            <option value="classA">Class A</option>
-                            <option value="classB">Class B</option>
-                            <option value="classC">Class C</option>
-                            <option value="classD">Class D</option>
+                            <option value="A">Class A</option>
+                            <option value="B">Class B</option>
+                            <option value="C">Class C</option>
+                            <option value="D">Class D</option>
                         </select>
                         <hr>
                         <label for="dateStart">Sailing Date</label>
@@ -37,28 +46,53 @@
 
                             <button name="filterButton" id="filterButton" onclick="loadMap()">Apply</button>
                     </div>
+                    <!-- End of Map filter -->
                     <div id="noResult">No results to show</div>
-
                     <!-- map display area -->
                     <div id="resultArea">
                         <iframe id="mapArea"
-                        src="test" 
+                        src="./Maps/blank.html" 
                         frameborder="0"
                       ></iframe>
                     </div>
-                    </div>    
+                   <!--  End of map display area -->
+                </div> 
+            </section>   
         </main>
     </div>
+    <!-- custom JS -->
+    <script > 
+        //funciton to display map based on filters
+        function loadMap(){
+            const map = document.getElementById("mapArea");
+            const boatType = document.getElementById("typeInput").value;
+            const date = document.getElementById("dateSelect").value;
+            const filePath = "Maps/"+boatType+"/"+date+".html";
+            console.log(filePath);//log filepath
+            
+            //check if map URL works, if not then display error
+            if(UrlExists(filePath)){
+                console.log("Map exists.");
+                map.setAttribute("src", filePath);//display selected map page
+            }else{
+                console.log("No map exists for these filters.");
+                map.setAttribute("src", "error.html");//displasy error page
+            }
+        }//load function
+
+        //map verifier function
+        function UrlExists(url) {
+            var http = new XMLHttpRequest();
+            http.open('HEAD', url, false);
+            http.send();//send a request to test opening the webpage
+            
+            //if no 404 error then the webpage exists, else it does not and a 404 error returned
+            if (http.status != 404)
+                return true;
+            else
+                return false;
+        }
+    </script>
 </body>
-<script > 
-function loadMap(){
-    const map = document.getElementById("mapArea");
-    const boatType = document.getElementById("typeInput").value;
-    const date = document.getElementById("dateSelect").value;
-    const filePath = "Maps/"+boatType+"/"+date+".html";
-    console.log(filePath);
-    map.setAttribute("src", filePath);
-}
-</script>
 
 </html>

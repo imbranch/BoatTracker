@@ -11,7 +11,7 @@ add_bData = ("INSERT INTO data "
 try:
     
     cursor = cnx.cursor()
-    with open("/Users/chris/Desktop/mapData/raceC.csv",newline='') as csvfile:
+    with open("/Users/chris/Desktop/mapData/raceB.csv",newline='') as csvfile:
         reader = csv.reader(csvfile, delimiter=',',quotechar='|' )
         for row in reader:
             lat = float(row[0])

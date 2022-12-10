@@ -33,7 +33,7 @@ cnx = mysql.connector.connect(user='root', password='',
 cursor = cnx.cursor(buffered=True, dictionary=True)
 cursor2 = cnx.cursor(buffered=True)
 query = ("SELECT DISTINCT boat_type FROM data "
-         "WHERE DATE(date) = '2022-11-28'")
+         "WHERE DATE(date) = '2022-11-05'")
 
 
 cursor.execute(query)
@@ -45,7 +45,7 @@ for (boat_type) in cursor:
 allboats = []
 for boatType in boatsy:
     newquery = ("SELECT DISTINCT sail_number FROM data "
-         "WHERE DATE(date) = '2022-11-28' and boat_type = %s")
+         "WHERE DATE(date) = '2022-11-05' and boat_type = %s")
     cursor.execute(newquery, (boatType,))
     for sailNum in cursor:
         allboats.append(Boat(boatType, sailNum["sail_number"]))
@@ -54,7 +54,7 @@ for sailBoat in allboats:
     print(sailBoat.sNum)
     
     newquery = ("SELECT lat,lon FROM data "
-         "WHERE DATE(date) = '2022-11-28' and boat_type = %s and sail_number = %s")
+         "WHERE DATE(date) = '2022-11-05' and boat_type = %s and sail_number = %s")
     cursor.execute(newquery, (sailBoat.bType,sailBoat.sNum))
     for latlon in cursor:
         templat = latlon["lat"]

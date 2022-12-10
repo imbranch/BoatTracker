@@ -1,6 +1,11 @@
 # this is a working connector from python to mysql the usb file path has to be changed to the final version of pi's usb
 import csv
-import mysql.connector    
+import mysql.connector 
+ 
+import datetime
+today = datetime.date.today()
+LOG_FILE = f"/Volumes/gpsLog/{str(today)}.csv" 
+  
 cnx = mysql.connector.connect(user='root', password='',
                               host='127.0.0.1',
                               database='sailboating')
@@ -11,7 +16,7 @@ add_bData = ("INSERT INTO data "
 try:
     
     cursor = cnx.cursor()
-    with open("/Users/chris/Desktop/mapData/raceB.csv",newline='') as csvfile:
+    with open(LOG_FILE,newline='') as csvfile:
         reader = csv.reader(csvfile, delimiter=',',quotechar='|' )
         for row in reader:
             lat = float(row[0])

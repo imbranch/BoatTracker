@@ -1,0 +1,42 @@
+main {
+    margin-top: 80px;
+}
+
+#contentWrapper {
+	margin: 0;
+}
+
+.boatContainer {
+    display: flex;
+    height: 400px;
+}
+
+.boatContainer .content {
+    padding: 6em 4em 0.1em 4em ;
+    -moz-order: 2;
+    -webkit-order: 2;
+    -ms-order: 2;
+    order: 2;
+    max-width: 48em;
+    width: 60%;
+}
+
+.boatContainer img {
+    width: 650px;
+    height: 400px;
+}
+
+.boatContainer:nth-child(2n) {
+    -moz-flex-direction: row-reverse;
+    -webkit-flex-direction: row-reverse;
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+.boatContainer p {
+    align-items: center;
+    width: max-content;
+    display:flex;
+    flex: 1;
+}
